@@ -56,7 +56,7 @@ export default function RecoilizeDebugger(props) {
   const nodeSubscriptions = {};
 
   nodes.forEach(node => {
-    const getDeps = [...snapshot.getDeps_UNSTABLE(node)];
+    const getDeps = [...snapshot.getInfo_UNSTABLE(node).deps];
     nodeDeps[node.key] = getDeps.map(dep => dep.key);
   });
 
